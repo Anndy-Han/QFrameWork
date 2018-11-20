@@ -62,7 +62,7 @@ namespace QFrameWork
 
         public void Load()
         {
-            UnityEngine.Debug.Log("Load");
+
         }
     }
 }
