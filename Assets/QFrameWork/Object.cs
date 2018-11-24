@@ -71,6 +71,11 @@ namespace QFrameWork
             this.audioManager.PlaySfx(name);
         }
 
+        public void SaveConfig()
+        {
+            this.audioManager.SaveConfig();
+        }
+
         public void Mute()
         {
             this.audioManager.Mute();

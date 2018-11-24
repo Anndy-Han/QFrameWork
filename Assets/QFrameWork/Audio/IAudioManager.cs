@@ -26,5 +26,7 @@ namespace QFrameWork
         void Mute();
 
         void Resume();
+
+        void SaveConfig();
     }
 }

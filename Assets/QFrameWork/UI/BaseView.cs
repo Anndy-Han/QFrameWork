@@ -56,6 +56,8 @@ namespace QFrameWork
 
             baseView.BindWidget(widget);
 
+            baseView.Init();
+
             return baseView as T;
         }
 

@@ -18,3 +18,7 @@
 2.App启动的时候会通过读取配置加载所有配置好的流程的OnLoad。
 3.流程切换通过ChangeProcedure，可以进入或者离开某个流程，分别执行这个流程的OnEnter和OnLeave。
 4.所有的View通过绑定自己的Widget来作为本页面的处理器。
+
+四
+1.点击菜单栏QFrameWork--GenUIViewCode可以一键生成对应UI面板的代码
+2.需要给定一个UI的Prefab,可以查找控件,声明对应的变量,查找变量并且复制,绑定事件.
