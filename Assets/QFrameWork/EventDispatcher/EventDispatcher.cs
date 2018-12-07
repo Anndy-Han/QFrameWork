@@ -5,38 +5,46 @@ namespace QFrameWork
 {
     public class EventDispatcher:IEventDispatcher,IPlugin
     {
-        private static Dictionary<string,List<Action<object,object>>> messageCenterDic = new Dictionary<string, List<Action<object, object>>>();
+        /// <summary>
+        /// 当前注册的委托。
+        /// Key：消息类型；
+        /// Value：该消息类型对应的委托
+        /// </summary>
+        private Dictionary<string, Action<object, object>> messageToDelegateMap = new Dictionary<string, Action<object, object>>();
 
-        public static void Clear()
+        public void Clear()
         {
-            messageCenterDic.Clear();
+            messageToDelegateMap.Clear();
         }
 
-        public void Subscribe(string str, Action<object, object> handler)
+        /// <summary>
+        /// 添加一个消息监听
+        /// </summary>
+        /// <param name="message">要监听的消息类型</param>
+        /// <param name="handler">处理方法委托</param>
+        public void Subscribe(string message, Action<object, object> handler)
         {
-            if (messageCenterDic.ContainsKey(str))
+            if (!messageToDelegateMap.ContainsKey(message))
             {
-                messageCenterDic[str].Add(handler);
+                messageToDelegateMap.Add(message, null);
+            }
+            messageToDelegateMap[message] += handler;
+        }
+
+        /// <summary>
+        /// 移除一个消息监听
+        /// </summary>
+        /// <param name="message">要移除的消息类型</param>
+        /// <param name="handler">处理方法委托</param>
+        public void UnSubscribe(string message, Action<object, object> handler)
+        {
+            if (messageToDelegateMap.ContainsKey(message))
+            {
+                messageToDelegateMap[message] -= handler;
             }
             else
             {
-                List<Action<object, object>> actionList = new List<Action<object, object>>();
-
-                actionList.Add(handler);
-
-                messageCenterDic.Add(str, actionList);
-            }
-        }
-
-        public void UnSubscribe(string str, Action<object, object> handler)
-        {
-            if (!messageCenterDic.ContainsKey(str))
-            {
-                throw new ArgumentNullException(str);
-            }
-            for (int i = 0; i < messageCenterDic[str].Count; i++)
-            {
-                messageCenterDic[str].Remove(handler);
+                throw new NullReferenceException(message);
             }
         }
 
@@ -47,16 +55,14 @@ namespace QFrameWork
 
         public void Post(string str, object sender, object args)
         {
-            if (messageCenterDic.ContainsKey(str))
+            Action<object, object> handler = null;
+
+            if (messageToDelegateMap.TryGetValue(str, out handler))
             {
-                for (int i = 0; i < messageCenterDic[str].Count; i++)
+                if (handler != null)
                 {
-                    messageCenterDic[str][i](sender, args);
+                    handler(sender, args);
                 }
-            }
-            else
-            {
-                throw new ArgumentNullException(str);
             }
         }
 

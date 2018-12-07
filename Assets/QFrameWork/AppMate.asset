@@ -11,9 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2b1477854a1df5489b5fc02b92d9d62, type: 3}
   m_Name: AppMate
   m_EditorClassIdentifier: 
-  AppName: 
+  AppName: QFrameWork
   AppVerision: 
   ResourceVersion: 
-  EngineVersion: 
+  EngineVersion: 1.1.0
   targetFrameRate: 0
   startProcedure: 

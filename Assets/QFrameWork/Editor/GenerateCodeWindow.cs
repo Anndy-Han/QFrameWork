@@ -67,7 +67,7 @@ namespace Quick.Code
         private string assignCodeFmt { get { return CodeConfig.assignCodeFmt; } }
         private string assignGameObjectCodeFmt { get { return CodeConfig.assignGameObjectCodeFmt; } }
         private string assignRootCodeFmt { get { return CodeConfig.assignRootCodeFmt; } }
-        private string onClickSerilCode { get { return CodeConfig.onValueChangeSerilCode; } }
+        private string onClickSerilCode { get { return CodeConfig.onClickSerilCode; } }
         private string onValueChangeSerilCode { get { return CodeConfig.onValueChangeSerilCode; } }
         private string btnCallbackSerilCode { get { return CodeConfig.btnCallbackSerilCode; } }
         private string eventCallbackSerilCode { get { return CodeConfig.eventCallbackSerilCode; } }
