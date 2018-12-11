@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 namespace QFrameWork
 {
+    [DisallowMultipleComponent]
     public class Widget: UIBehaviour
     {
         [SerializeField]

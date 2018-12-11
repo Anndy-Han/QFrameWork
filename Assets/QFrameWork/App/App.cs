@@ -11,7 +11,7 @@ namespace QFrameWork
         Android,
         Ios
     }
-
+    [DisallowMultipleComponent]
     public class App:QBehaviour,IApp
     {
         public AppMode appMode = AppMode.Developing;
@@ -121,5 +121,58 @@ namespace QFrameWork
         {
             return this.appMate;
         }
+
+        private void OnApplicationFocus(bool focus)
+        {
+            if (focus)
+            {
+                Debug.LogFormat("Engine - Engine is resumed.");
+            }
+        }
+
+        private void OnApplicationPause(bool pause)
+        {
+            if (pause)
+            {
+                Debug.LogFormat("Engine - Engine is paused.");
+            }
+        }
+
+
+        # region ITicker
+
+        private static List<ITicker> m_tickers = new List<ITicker>();
+
+        public static void AddTicker(ITicker ticker)
+        {
+            if (!m_tickers.Contains(ticker))
+            {
+                m_tickers.Add(ticker);
+            }
+        }
+
+        public static void RemoveTicker(ITicker ticker)
+        {
+            if (m_tickers.Contains(ticker))
+            {
+                m_tickers.Remove(ticker);
+            }
+        }
+
+        private void Update()
+        {
+            var count = m_tickers.Count;
+            if (count <= 0)
+                return;
+            for (var i = 0; i < count; i++)
+            {
+                var evt = m_tickers[i];
+                if (!evt.OnUpdate(Time.deltaTime)) continue;
+                m_tickers.RemoveAt(i);
+                count--;
+            }
+        }
+
+        # endregion 
     }
 }

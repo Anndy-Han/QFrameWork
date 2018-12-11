@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace QFrameWork
 {
+    [DisallowMultipleComponent]
     public class UIManager:QBehaviour,IUIManager,IPlugin
     {
         public Dictionary<string, Widget> _UIDict = new Dictionary<string,Widget>();

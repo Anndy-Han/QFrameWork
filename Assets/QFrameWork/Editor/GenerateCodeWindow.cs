@@ -574,7 +574,7 @@ namespace Quick.Code
             File.WriteAllText(path, scriptBuilder.ToString(), new UTF8Encoding(false));
             AssetDatabase.Refresh();
 
-            Debug.Log("脚本生成成功,生成路径为:" + path);
+            ShowNotification(new GUIContent("脚本生成成功,生成路径为:" + path));
             EditorPrefs.SetString("create_script_folder", path);
         }
 
@@ -711,10 +711,7 @@ namespace Quick.Code
                     pathDic.Add(tfArray[i], str);
                 }
             }
-            //Debug.Log(path);
-
             return pathDic;
         }
-
     }
 }

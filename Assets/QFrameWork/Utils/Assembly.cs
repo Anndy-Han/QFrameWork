@@ -15,6 +15,75 @@ namespace QFrameWork
             s_Assemblies = AppDomain.CurrentDomain.GetAssemblies();
         }
 
+        private static readonly string[] AssemblyNames =
+       {
+#if UNITY_2017_3_OR_NEWER
+            "UnityGameFramework.Runtime",
+#endif
+            "Assembly-CSharp"
+        };
+
+        private static readonly string[] EditorAssemblyNames =
+        {
+#if UNITY_2017_3_OR_NEWER
+            "UnityGameFramework.Editor",
+#endif
+            "Assembly-CSharp-Editor"
+        };
+
+        /// <summary>
+        /// 获取指定基类的所有子类的名称。
+        /// </summary>
+        /// <param name="typeBase">基类类型。</param>
+        /// <returns>指定基类的所有子类的名称。</returns>
+        public static string[] GetTypeNames(System.Type typeBase)
+        {
+            return GetTypeNames(typeBase, AssemblyNames);
+        }
+
+        /// <summary>
+        /// 获取指定基类的所有子类的名称。
+        /// </summary>
+        /// <param name="typeBase">基类类型。</param>
+        /// <returns>指定基类的所有子类的名称。</returns>
+        public static string[] GetEditorTypeNames(System.Type typeBase)
+        {
+            return GetTypeNames(typeBase, EditorAssemblyNames);
+        }
+
+        private static string[] GetTypeNames(System.Type typeBase, string[] assemblyNames)
+        {
+            List<string> typeNames = new List<string>();
+            foreach (string assemblyName in assemblyNames)
+            {
+                System.Reflection.Assembly assembly = null;
+                try
+                {
+                    assembly = System.Reflection.Assembly.Load(assemblyName);
+                }
+                catch
+                {
+                    continue;
+                }
+
+                if (assembly == null)
+                {
+                    continue;
+                }
+
+                System.Type[] types = assembly.GetTypes();
+                foreach (System.Type type in types)
+                {
+                    if (type.IsClass && !type.IsAbstract && typeBase.IsAssignableFrom(type))
+                    {
+                        typeNames.Add(type.FullName);
+                    }
+                }
+            }
+            typeNames.Sort();
+            return typeNames.ToArray();
+        }
+
         /// <summary>
         /// 获取已加载的程序集。
         /// </summary>
