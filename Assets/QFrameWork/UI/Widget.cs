@@ -28,6 +28,10 @@ namespace QFrameWork
                 }
                 return this.transform;
             }
+            set
+            {
+                this.content = value;
+            }
         }
     }
 }
