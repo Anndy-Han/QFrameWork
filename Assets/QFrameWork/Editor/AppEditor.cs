@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEditor;
-using System;
+using System.Collections.Generic;
 
 namespace QFrameWork.Editor
 {
@@ -19,8 +19,6 @@ namespace QFrameWork.Editor
         {
             base.OnInspectorGUI();
 
-            //EditorGUILayout.Space();
-            //EditorGUILayout.Space();
             EditorGUILayout.LabelField("Base Property");
             EditorGUILayout.HelpBox(string.Format("{0}游戏引擎    -EngineVersion: {1}", app.appMate.AppName,app.appMate.EngineVersion), MessageType.Info);
 
@@ -38,12 +36,13 @@ namespace QFrameWork.Editor
                         bool selected = true;
                         if (selected != EditorGUILayout.ToggleLeft(procedureTypeName, selected))
                         {
-                            if (!selected)
-                            {
 
-                            }
                         }
                     }
+                }
+                else
+                {
+                    EditorGUILayout.HelpBox("There is no available procedure.", MessageType.Warning);
                 }
             }
         }

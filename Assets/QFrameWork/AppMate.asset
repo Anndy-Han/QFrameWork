@@ -17,3 +17,4 @@ MonoBehaviour:
   EngineVersion: 1.1.0
   targetFrameRate: 0
   startProcedure: 
+  procedureMates: []

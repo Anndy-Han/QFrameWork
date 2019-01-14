@@ -25,7 +25,7 @@ namespace QFrameWork
             Init();
         }
 
-        public void BindWidget(Widget widget)
+        public virtual void BindWidget(Widget widget)
         {
             this.widget = widget;
         }
