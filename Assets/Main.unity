@@ -101,7 +101,7 @@ Prefab:
     - target: {fileID: 114082190693181148, guid: 032093da0ca8d82478a7569aa2483a7e,
         type: 2}
       propertyPath: widgets.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4046069863740608, guid: 032093da0ca8d82478a7569aa2483a7e, type: 2}
       propertyPath: m_LocalPosition.x
@@ -139,8 +139,9 @@ Prefab:
         type: 2}
       propertyPath: widgets.Array.data[0]
       value: 
-      objectReference: {fileID: 114952284897117208, guid: 195fbb6acdadd3246b0b22fc2a9c469c,
+      objectReference: {fileID: 114779673486385672, guid: a5e37fbcee22704439f9bfe0dc937101,
         type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114570872074279388, guid: 032093da0ca8d82478a7569aa2483a7e, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 032093da0ca8d82478a7569aa2483a7e, type: 2}
   m_IsPrefabParent: 0

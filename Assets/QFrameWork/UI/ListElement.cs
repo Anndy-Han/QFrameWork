@@ -27,7 +27,10 @@ namespace QFrameWork
             set
             {
                 m_sourceData = value;
-                Refresh();
+                for (int i = 0; i < m_sourceData.Count; i++)
+                {
+                    listWidget.InstantiateNextItem(i);
+                }
             }
             get
             {
@@ -47,7 +50,6 @@ namespace QFrameWork
             var temp = new T();
             temp.transform = transform;
             temp.OnEnable();
-
             items.Add(transform, temp);
         }
 
@@ -60,33 +62,6 @@ namespace QFrameWork
                 var data = m_sourceData[index];
                 temp.OnDataChanged(data);
             }
-        }
-
-        public void Refresh()
-        {
-            if (m_sourceData == null)
-            {
-                listWidget.totalCount = 0;
-                return;
-            }
-            if (listWidget == null)
-                return;
-            listWidget.totalCount = m_sourceData.Count;
-        }
-
-        public void Repaint(int offset)
-        {
-            listWidget.RefillCells(offset);
-        }
-
-        public void RepaintFromReverse(int offset)
-        {
-            listWidget.RefillCellsFromEnd(offset);
-        }
-
-        public void Repaint()
-        {
-            listWidget.RefreshCells();
         }
     }
 }
