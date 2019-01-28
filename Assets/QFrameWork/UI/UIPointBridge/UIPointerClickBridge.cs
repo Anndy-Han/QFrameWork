@@ -4,7 +4,7 @@ using System;
 
 namespace QFrameWork
 {
-    public class UIPointerClickBrige : MonoBehaviour,IPointerClickHandler
+    public class UIPointerClickBridge : MonoBehaviour,IPointerClickHandler
     {
         public Action<PointerEventData> onPointerClick;
         public Action onClick;

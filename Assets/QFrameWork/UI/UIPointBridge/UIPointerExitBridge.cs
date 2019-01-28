@@ -5,7 +5,7 @@ using System;
 namespace QFrameWork
 {
 
-    public class UIPointerExitBrige : MonoBehaviour,IPointerExitHandler
+    public class UIPointerExitBridge : MonoBehaviour,IPointerExitHandler
     {
         public Action<PointerEventData> onPointerExit;
         public Action onExit;

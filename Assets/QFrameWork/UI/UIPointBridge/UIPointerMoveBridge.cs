@@ -5,7 +5,7 @@ using System;
 namespace QFrameWork
 {
 
-    public class UIPointerMoveBrige : MonoBehaviour,IMoveHandler
+    public class UIPointerMoveBridge : MonoBehaviour,IMoveHandler
     {
         public Action<AxisEventData> onPointerMove;
 

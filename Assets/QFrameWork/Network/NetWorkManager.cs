@@ -59,7 +59,7 @@ namespace QFrameWork
 
             yield return op;
 
-            if (!request.isError)
+            if (!request.isNetworkError)
             {
                 onSuccessCallback(request.downloadHandler.text);
             }

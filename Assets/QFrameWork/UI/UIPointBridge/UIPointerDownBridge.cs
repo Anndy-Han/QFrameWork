@@ -4,7 +4,7 @@ using System;
 
 namespace QFrameWork
 {
-    public class UIPointerDownBrige : MonoBehaviour,IPointerDownHandler
+    public class UIPointerDownBridge : MonoBehaviour,IPointerDownHandler
     {
         public Action<PointerEventData> onPointerDown;
         public Action onDown;

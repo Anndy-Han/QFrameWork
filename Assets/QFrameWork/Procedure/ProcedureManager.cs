@@ -81,6 +81,7 @@ namespace QFrameWork
                     break;
                 case 2:
                     baseProcedure.OnUnload();
+                    awakeProcedures.Remove(baseProcedure);
                     break;
             }
         }

@@ -4,7 +4,7 @@ using System;
 
 namespace QFrameWork
 {
-    public class UIPointerEnterBrige : MonoBehaviour,IPointerEnterHandler
+    public class UIPointerEnterBridge : MonoBehaviour,IPointerEnterHandler
     {
         public Action<PointerEventData> onPointerEnter;
         public Action onEnter;

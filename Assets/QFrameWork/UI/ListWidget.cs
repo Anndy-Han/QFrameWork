@@ -48,6 +48,19 @@ namespace QFrameWork
             InstantiatedItem(m_item);
         }
 
+        private void ReturnObjectAndSendMessage(RectTransform go)
+        {
+            m_itemPool.Release(go);
+        }
+
+        public void ClearCells()
+        {
+            for (int i = Content.childCount - 1; i >= 0; i--)
+            {
+                ReturnObjectAndSendMessage(Content.GetChild(i) as RectTransform);
+            }
+        }
+
         void InstantiatedItem(RectTransform transform)
         {
             if (m_onItemInstantiated != null)

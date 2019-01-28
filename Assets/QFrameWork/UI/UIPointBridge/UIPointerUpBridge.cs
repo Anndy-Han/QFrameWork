@@ -4,7 +4,7 @@ using System;
 
 namespace QFrameWork
 {
-    public class UIPointerUpBrige : MonoBehaviour,IPointerUpHandler
+    public class UIPointerUpBridge : MonoBehaviour,IPointerUpHandler
     {
         public Action<PointerEventData> onPointerUp;
         public Action onUp;

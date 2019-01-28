@@ -27,14 +27,20 @@ namespace QFrameWork
             set
             {
                 m_sourceData = value;
-                for (int i = 0; i < m_sourceData.Count; i++)
-                {
-                    listWidget.InstantiateNextItem(i);
-                }
+                Repaint();
             }
             get
             {
                 return m_sourceData;
+            }
+        }
+
+        public void Repaint()
+        {
+            this.listWidget.ClearCells();
+            for (int i = 0; i < m_sourceData.Count; i++)
+            {
+                listWidget.InstantiateNextItem(i);
             }
         }
 

@@ -5,7 +5,7 @@ using System;
 namespace QFrameWork
 {
 
-    public class UIPointerDragBrige : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
+    public class UIPointerDragBridge : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
     {
         public Action<PointerEventData> onDrag;
         public Action<PointerEventData> onBeginDrag;

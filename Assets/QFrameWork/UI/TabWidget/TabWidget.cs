@@ -51,7 +51,6 @@ namespace QFrameWork
 
         internal void DoChanged(bool value)
         {
-            Debug.Log(transform,transform);
             if (OnValueChanged != null)
                 OnValueChanged(value);
             adapter.OnToggle(value);
