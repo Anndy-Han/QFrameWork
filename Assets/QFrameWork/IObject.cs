@@ -11,11 +11,7 @@ namespace QFrameWork
 
         IEventDispatcher eventDispatcher { get; }
 
-        ILoadManager loadManager { get; }
-
         IResourcesManager resourcesManager { get; }
-
-        ISceneManager sceneManager { get; }
 
         IUIManager uiManager { get; }
 

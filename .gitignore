@@ -22,3 +22,4 @@ PersistentPath/Log/20185311634.txt
 *.csproj
 PersistentPath
 Library
+.vs/

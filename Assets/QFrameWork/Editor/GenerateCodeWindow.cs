@@ -13,7 +13,7 @@ namespace Quick.Code
 {
     public class GenerateCodeWindow : EditorWindow
     {
-        [MenuItem("QFrameWork/GenUIViewCode")]
+        [MenuItem("QFrameWork/Generate View Code")]
         public static void OpenWindow()
         {
             if (codeWindow == null)

@@ -8,8 +8,7 @@ namespace QFrameWork
     public enum AppMode
     {
         Developing,
-        Android,
-        Ios
+        Release
     }
     [DisallowMultipleComponent]
     public class App:QBehaviour,IApp
@@ -44,11 +43,7 @@ namespace QFrameWork
 
             Global.eventDispatcher = GetRuntimeManager<EventDispatcher>() as EventDispatcher;
 
-            Global.loadManager = GetRuntimeManager<LoadManager>() as LoadManager;
-
             Global.resourcesManager = GetRuntimeManager<ResourcesManager>() as ResourcesManager;
-
-            Global.sceneManager = GetRuntimeManager<SceneManager>() as SceneManager;
 
             Global.uiManager = GetRuntimeManager<UIManager>() as UIManager;
 
@@ -57,6 +52,8 @@ namespace QFrameWork
             Global.audioManager = GetRuntimeManager<AudioManager>() as AudioManager;
 
             Global.networkManager = GetRuntimeManager<NetWorkManager>() as NetWorkManager;
+
+            Global.entityManager = GetRuntimeManager<EntityManager>() as EntityManager;
         }
 
         public object GetRuntimeManager<T>()
@@ -95,8 +92,6 @@ namespace QFrameWork
             Debug.Log("=======App is launching=======");
 
             Application.targetFrameRate = this.appMate.targetFrameRate;
-
-            QLog.Instance();
 
             LoadRuntimeManager();
 
@@ -172,7 +167,6 @@ namespace QFrameWork
                 count--;
             }
         }
-
         # endregion 
     }
 }

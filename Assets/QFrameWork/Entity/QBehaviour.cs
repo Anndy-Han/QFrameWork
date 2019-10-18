@@ -6,26 +6,6 @@ namespace QFrameWork
 {
     public class QBehaviour:MonoBehaviour,IObject
     {
-        public string LoadText(string path)
-        {
-            return this.loadManager.LoadText(path);
-        }
-
-        public Dictionary<string, string> LoadCsv(string path)
-        {
-            return this.loadManager.LoadCsv(path);
-        }
-
-        public string DataPath()
-        {
-            return this.loadManager.DataPath();
-        }
-
-        public string StreamimgAssetsPath()
-        {
-            return this.loadManager.StreamingAssetsPath();
-        }
-
         public Msg CreateProcedureEnter(string str)
         {
             return this.proceduceManager.CreateProcedureEnter(str);
@@ -126,19 +106,9 @@ namespace QFrameWork
             get { return Global.eventDispatcher; }
         }
 
-        public ILoadManager loadManager
-        {
-            get { return Global.loadManager; }
-        }
-
         public IResourcesManager resourcesManager
         {
             get { return Global.resourcesManager; }
-        }
-
-        public ISceneManager sceneManager
-        {
-            get { return Global.sceneManager; }
         }
 
         public IUIManager uiManager
@@ -159,6 +129,11 @@ namespace QFrameWork
         public INetworkManager networkManager
         {
             get { return Global.networkManager; }
+        }
+
+        public IEntityManager entityManager 
+        {
+            get { return Global.entityManager; }
         }
     }
 }

@@ -16,9 +16,9 @@ namespace QFrameWork
 
         public void Load()
         {
-            normalCanvas = transform.Find("Canvas/NormalRoot").transform;
+            normalCanvas = transform.Find("UI/NormalRoot").transform;
 
-            modalCanvas = transform.Find("Canvas/ModalRoot").transform;
+            modalCanvas = transform.Find("UI/ModalRoot").transform;
         }
 
         /// <summary>

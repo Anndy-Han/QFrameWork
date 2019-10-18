@@ -6,26 +6,6 @@ namespace QFrameWork
 {
     public class Object : IObject
     {
-        public string LoadText(string path)
-        {
-            return this.loadManager.LoadText(path);
-        }
-
-        public Dictionary<string, string> LoadCsv(string path)
-        {
-            return this.loadManager.LoadCsv(path);
-        }
-
-        public string DataPath()
-        {
-            return this.loadManager.DataPath();
-        }
-
-        public string StreamimgAssetsPath()
-        {
-            return this.loadManager.StreamingAssetsPath();
-        }
-
         public void Subscribe(string str, Action<object, object> handler)
         {
             this.eventDispatcher.Subscribe(str, handler);
@@ -106,6 +86,42 @@ namespace QFrameWork
             return this.audioManager.GetSfxVolume();
         }
 
+        public Entity CreateEntity(GameObject gameObject, EntityLogic entityLogic, object entityInfo, IEntityGroup entityGroup)
+        {
+            return this.entityManager.CreateEntity(gameObject, entityLogic, entityInfo, entityGroup);
+        }
+
+        public Entity GetEntity(int id)
+        {
+            return this.entityManager.GetEntity(id);
+        }
+
+        public bool HasEntity(int id)
+        {
+            return this.entityManager.HasEntity(id);
+        }
+
+        public bool AddEntityGroup(string entityGroupName, IEntityGroup entityGroup)
+        {
+            return this.entityManager.AddEntityGroup(entityGroupName, entityGroup);
+        }
+
+        public bool HasEntityGroup(string entityGroupName)
+        {
+            return this.entityManager.HasEntityGroup(entityGroupName);
+        }
+
+        public int EntityCount {
+            get {
+                return this.entityManager.EntityCount;
+            }
+        }
+
+        public void ReleaseResource()
+        {
+            this.resourcesManager.ReleaseResource();
+        }
+
         public void HttpSend(string url, int timeout, Action<object> onSuccessCallback, Action<object> onFailCallback)
         {
             this.networkManager.HttpSend(url, timeout, onSuccessCallback, onFailCallback);
@@ -124,19 +140,9 @@ namespace QFrameWork
             get { return Global.eventDispatcher; }
         }
 
-        public ILoadManager loadManager
-        {
-            get { return Global.loadManager; }
-        }
-
         public IResourcesManager resourcesManager
         {
             get { return Global.resourcesManager; }
-        }
-
-        public ISceneManager sceneManager
-        {
-            get { return Global.sceneManager; }
         }
 
         public IUIManager uiManager
@@ -157,6 +163,11 @@ namespace QFrameWork
         public INetworkManager networkManager
         {
             get { return Global.networkManager; }
+        }
+
+        public IEntityManager entityManager 
+        {
+            get { return Global.entityManager; }
         }
     }
 }
