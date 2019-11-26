@@ -63,7 +63,6 @@ namespace QFrameWork
             string outfile = dataPath + "files.txt";
             if (File.Exists(outfile)) File.Delete(outfile);
 
-            string message = "正在解包文件:>files.txt";
             Debug.Log(infile);
             Debug.Log(outfile);
             if (Application.platform == RuntimePlatform.Android)
@@ -87,8 +86,6 @@ namespace QFrameWork
                 string[] fs = file.Split('|');
                 infile = resPath + fs[0];  //
                 outfile = dataPath + fs[0];
-
-                message = "正在解包文件:>" + fs[0];
                 Debug.Log("正在解包文件:>" + infile);
 
                 string dir = Path.GetDirectoryName(outfile);
@@ -115,10 +112,7 @@ namespace QFrameWork
                 }
                 yield return new WaitForEndOfFrame();
             }
-            message = "解包完成!!!";
             yield return new WaitForSeconds(0.1f);
-
-            message = string.Empty;
             // 拷贝完成，开始下载
             StartCoroutine(OnUpdateResource());
         }
@@ -133,7 +127,7 @@ namespace QFrameWork
                 OnResourceInited();
                 yield break;
             }
-            string dataPath = Util.DataPath;  //数据目录
+            string dataPath = Util.DataPath; 
             string url = Global.WebUrl;
             string message = string.Empty;
             string random = DateTime.Now.ToString("yyyymmddhhmmss");
@@ -267,7 +261,7 @@ namespace QFrameWork
         }
 
         /// <summary>
-        /// 载入素材
+        /// 加载资源
         /// </summary>
         public T LoadAsset<T>(string abname, string assetname) where T : UnityEngine.Object
         {
@@ -277,7 +271,7 @@ namespace QFrameWork
         }
 
         /// <summary>
-        /// 载入AssetBundle
+        /// 加载AssetBundle
         /// </summary>
         /// <param name="abname"></param>
         /// <returns></returns>

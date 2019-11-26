@@ -27,7 +27,7 @@ namespace QFrameWork
             throw new NotImplementedException();
         }
 
-        public void HttpSend(string url, int timeout, Action<object> onSuccessCallback, Action<object> onFailCallback)
+        public new void HttpSend(string url, int timeout, Action<object> onSuccessCallback, Action<object> onFailCallback)
         {
             StartCoroutine(Send(url, timeout,null, onSuccessCallback, onFailCallback));
         }
