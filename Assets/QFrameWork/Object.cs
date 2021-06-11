@@ -86,9 +86,9 @@ namespace QFrameWork
             return this.audioManager.GetSfxVolume();
         }
 
-        public Entity CreateEntity(GameObject gameObject, EntityLogic entityLogic, object entityInfo, IEntityGroup entityGroup)
+        public Entity CreateEntity(GameObject gameObject, EntityLogic entityLogic, object entityInfo)
         {
-            return this.entityManager.CreateEntity(gameObject, entityLogic, entityInfo, entityGroup);
+            return this.entityManager.CreateEntity(gameObject, entityLogic, entityInfo);
         }
 
         public Entity GetEntity(int id)
@@ -99,16 +99,6 @@ namespace QFrameWork
         public bool HasEntity(int id)
         {
             return this.entityManager.HasEntity(id);
-        }
-
-        public bool AddEntityGroup(string entityGroupName, IEntityGroup entityGroup)
-        {
-            return this.entityManager.AddEntityGroup(entityGroupName, entityGroup);
-        }
-
-        public bool HasEntityGroup(string entityGroupName)
-        {
-            return this.entityManager.HasEntityGroup(entityGroupName);
         }
 
         public int EntityCount {

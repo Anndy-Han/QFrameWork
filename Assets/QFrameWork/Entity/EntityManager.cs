@@ -17,11 +17,6 @@ namespace QFrameWork
         private Dictionary<int, Entity> entities;
 
         /// <summary>
-        /// 实体租组集合
-        /// </summary>
-        private Dictionary<string, IEntityGroup> entityGroups;
-
-        /// <summary>
         /// 获取所有实体数量
         /// </summary>
         public int EntityCount
@@ -59,9 +54,9 @@ namespace QFrameWork
         /// <param name="id">实体id</param>
         /// <param name="gameObject"></param>
         /// <returns></returns>
-        private Entity CreateEntity(int id, GameObject gameObject, EntityLogic entityLogic, object entityInfo, IEntityGroup entityGroup)
+        private Entity CreateEntity(int id, GameObject gameObject, EntityLogic entityLogic, object entityInfo)
         {
-            var e = new Entity(id, gameObject, entityLogic, entityInfo, entityGroup);
+            var e = new Entity(id, gameObject, entityLogic, entityInfo);
 
             this.entities.Add(id, e);
 
@@ -75,38 +70,13 @@ namespace QFrameWork
         /// </summary>
         /// <param name="gameObject"></param>
         /// <returns></returns>
-        public Entity CreateEntity(GameObject gameObject, EntityLogic entityLogic, object entityInfo, IEntityGroup entityGroup)
+        public Entity CreateEntity(GameObject gameObject, EntityLogic entityLogic, object entityInfo)
         {
             currentId++;
 
-            return this.CreateEntity(currentId, gameObject, entityLogic, entityInfo, entityGroup);
+            return this.CreateEntity(currentId, gameObject, entityLogic, entityInfo);
         }
 
-        /// <summary>
-        ///  增加一个实体组
-        /// </summary>
-        /// <param name="entityGroupName"></param>
-        /// <param name=""></param>
-        public bool AddEntityGroup(string entityGroupName, IEntityGroup entityGroup)
-        {
-            if (HasEntityGroup(entityGroupName))
-            {
-                return false;
-            }
-            this.entityGroups.Add(entityGroupName, entityGroup);
-
-            return true;
-        }
-
-        /// <summary>
-        /// 是否有这个实体组
-        /// </summary>
-        /// <param name="entityGroupName"></param>
-        /// <returns></returns>
-        public bool HasEntityGroup(string entityGroupName)
-        {
-            return this.entityGroups.ContainsKey(entityGroupName);
-        }
 
         /// <summary>
         /// 加载
@@ -114,8 +84,6 @@ namespace QFrameWork
         public void Load()
         {
             this.entities = new Dictionary<int, Entity>();
-
-            this.entityGroups = new Dictionary<string, IEntityGroup>();
         }
     }
 }

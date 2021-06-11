@@ -17,17 +17,11 @@ namespace QFrameWork
 
         private static readonly string[] AssemblyNames =
        {
-#if UNITY_2017_3_OR_NEWER
-            "UnityGameFramework.Runtime",
-#endif
             "Assembly-CSharp"
         };
 
         private static readonly string[] EditorAssemblyNames =
         {
-#if UNITY_2017_3_OR_NEWER
-            "UnityGameFramework.Editor",
-#endif
             "Assembly-CSharp-Editor"
         };
 

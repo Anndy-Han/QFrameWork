@@ -9,7 +9,7 @@ namespace QFrameWork
         /// </summary>
         /// <param name="gameObject"></param>
         /// <returns></returns>
-        Entity CreateEntity(GameObject gameObject, EntityLogic entityLogic, object entityInfo, IEntityGroup entityGroup);
+        Entity CreateEntity(GameObject gameObject, EntityLogic entityLogic, object entityInfo);
 
         /// <summary>
         /// 获取实体
@@ -24,21 +24,6 @@ namespace QFrameWork
         /// <param name="id"></param>
         /// <returns></returns>
         bool HasEntity(int id);
-
-        /// <summary>
-        /// 增加一个实体组
-        /// </summary>
-        /// <param name="entityGroupName"></param>
-        /// <param name="entityGroup"></param>
-        /// <returns></returns>
-        bool AddEntityGroup(string entityGroupName, IEntityGroup entityGroup);
-
-        /// <summary>
-        /// 是否有这个实体组
-        /// </summary>
-        /// <param name="entityGroupName"></param>
-        /// <returns></returns>
-        bool HasEntityGroup(string entityGroupName);
 
         /// <summary>
         /// 获取实体数量

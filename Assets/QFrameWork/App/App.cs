@@ -128,7 +128,6 @@ namespace QFrameWork
             }
         }
 
-               
         # region ITicker
 
         private static List<ITicker> m_tickers = new List<ITicker>();
