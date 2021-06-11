@@ -6,15 +6,9 @@ namespace QFrameWork
     public class Msg:Dictionary<string,object>
     {
         [UnityEngine.SerializeField]
-        public int intValue
-        {
-            get;set;
-        }
+        public int intValue;
         [UnityEngine.SerializeField]
-        public string stringValue
-        {
-            get;set;
-        }
+        public string stringValue;
 
         public Msg():base()
         {
