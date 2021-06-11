@@ -17,5 +17,5 @@ MonoBehaviour:
   ResourceVersion: 1.0.0
   EngineVersion: 1.0.0
   targetFrameRate: 60
-  startProcedure: 
+  startProcedure: LoginProcedure
   procedureMates: []

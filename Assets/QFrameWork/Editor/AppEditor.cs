@@ -21,7 +21,7 @@ namespace QFrameWork.Editor
             base.OnInspectorGUI();
 
             EditorGUILayout.LabelField("Base Property");
-            EditorGUILayout.HelpBox(string.Format("{0}游戏引擎    -EngineVersion: {1}", app.appMate.AppName,app.appMate.EngineVersion), MessageType.Info);
+            EditorGUILayout.HelpBox(string.Format("{0}项目引擎    -EngineVersion: {1}", app.appMate.AppName,app.appMate.EngineVersion), MessageType.Info);
 
             serializedObject.Update();
 
