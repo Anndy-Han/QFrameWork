@@ -20,5 +20,7 @@ namespace QFrameWork
         IAudioManager audioManager { get; }
 
         INetworkManager networkManager { get; }
+
+        IEntityManager entityManager { get; }
     }
 }
