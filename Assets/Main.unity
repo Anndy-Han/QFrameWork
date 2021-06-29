@@ -133,6 +133,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: QFrameWork
       objectReference: {fileID: 0}
+    - target: {fileID: 1483783691048124421, guid: 5d889b74b68bae648a1ccfdb4e81424f,
+        type: 3}
+      propertyPath: widgets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1483783691048124421, guid: 5d889b74b68bae648a1ccfdb4e81424f,
+        type: 3}
+      propertyPath: widgets.Array.data[0]
+      value: 
+      objectReference: {fileID: 8770942428741529892, guid: 42498ddd91534bb49ac5452dcd1a4369,
+        type: 3}
+    - target: {fileID: 1483783691048124421, guid: 5d889b74b68bae648a1ccfdb4e81424f,
+        type: 3}
+      propertyPath: widgets.Array.data[1]
+      value: 
+      objectReference: {fileID: 425336787273933152, guid: 1cee986c80ac4ca47981c42b3a9d0477,
+        type: 3}
     - target: {fileID: 4844385689336693108, guid: 5d889b74b68bae648a1ccfdb4e81424f,
         type: 3}
       propertyPath: m_LocalPosition.x
