@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eb7146f2f3d7f24986afab83b671367, type: 3}
+  m_Script: {fileID: 11500000, guid: 47c2058ae1a5ef44f8d463b4e77aa70d, type: 3}
   m_Name: AppMate
   m_EditorClassIdentifier: 
-  AppName: 
-  AppVerision: 
-  ResourceVersion: 
-  EngineVersion: 
-  targetFrameRate: 0
-  startProcedure: 
+  AppName: QFrameWork
+  AppVerision: 1.0.0
+  ResourceVersion: 1.0.0
+  EngineVersion: 1.0.0
+  targetFrameRate: 60
+  startProcedure: QFrameWork.Demo.LoginProcedure
   procedureMates: []

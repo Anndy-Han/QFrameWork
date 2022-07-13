@@ -118,11 +118,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 866285949151591980}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60de593e524cf434e82f1551ac466516, type: 3}
+  m_Script: {fileID: 11500000, guid: d8f36af2ab04bf443967cb10e341207c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   appMode: 0
-  appMate: {fileID: 11400000, guid: 8b095ecbf77450648841147feaea48aa, type: 2}
+  appMate: {fileID: 0}
 --- !u!114 &1483783691048124421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 866285949151591980}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c11731799f906c34384959459be56542, type: 3}
+  m_Script: {fileID: 11500000, guid: 91dab69f30114a04c966c76c92cfbcc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   widgets: []
@@ -219,6 +219,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &8511076518904698939
 MonoBehaviour:
   m_ObjectHideFlags: 0

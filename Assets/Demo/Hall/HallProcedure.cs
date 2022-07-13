@@ -13,7 +13,7 @@ namespace QFrameWork.Demo
         {
             base.OnAwake();
 
-            Debug.Log("HallProcedure-OnEnter");
+            Debug.Log("HallProcedure-OnAwake");
 
             view = new HallView(LoadWidget("HallView"));
         }
